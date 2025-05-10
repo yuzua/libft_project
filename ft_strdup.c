@@ -3,16 +3,15 @@
 char	*ft_strdup(const char *s)
 {
 	char	*ptr;
-	int		ssize;
-	int		i;
+	size_t	s_len;
 
-	ssize = 0;
-	while (s[ssize] != '\0')
-		ssize++;
-	ptr = (char *)malloc(sizeof(char) * (ssize + 1));
+	if (s == NULL)
+		return (NULL);
+	s_len = ft_strlen(s);
+	ptr = (char *)malloc(sizeof(char) * (s_len + 1));
 	if (!ptr)
 		return (NULL);
-	ft_memcpy(ptr, s, ssize);
-	ptr[ssize] = '\0';
+	ft_memcpy(ptr, s, s_len);
+	ptr[s_len] = '\0';
 	return (ptr);
 }

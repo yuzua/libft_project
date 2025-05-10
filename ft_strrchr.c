@@ -1,15 +1,16 @@
 char	*ft_strrchr(const char *s, int c)
 {
-	int	ssize;
+	unsigned int		s_len;
+	const unsigned char	c_char = (unsigned char)c;
 
-	ssize = 0;
-	while (s[ssize] != '\0')
-		ssize++;
-	while (ssize >= 0)
+	if (s == NULL)
+		return (NULL);
+	s_len = ft_strlen(s);
+	while (s_len >= 0)
 	{
-		if (s[ssize] == c)
-			return (s + ssize);
-		ssize--;
+		if (s[s_len] == c_char)
+			return ((char *)(s + s_len));
+		s_len--;
 	}
 	return (NULL);
 }

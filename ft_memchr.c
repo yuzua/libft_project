@@ -1,20 +1,14 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	int		ssize;
+	size_t				i;
+	const unsigned char	*s_char = (unsigned char *)s;
+	const unsigned char	c_char = (unsigned char)c;
 
-	if (c == '\0')
-	{
-		ssize = 0;
-		while (s[ssize] != '\0')
-			ssize++;
-		return (s + ssize);
-	}
 	i = 0;
-	while (i < n && s[i] != '\0')
+	while (i < n)
 	{
-		if (s[i] == c)
-			return (s + i);
+		if (s_char[i] == c_char)
+			return ((void)s_char + i);
 		i++;
 	}
 	return (NULL);
