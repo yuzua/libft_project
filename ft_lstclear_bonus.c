@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skeita <skeita@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 16:11:50 by skeita            #+#    #+#             */
-/*   Updated: 2025/05/11 16:40:32 by skeita           ###   ########.fr       */
+/*   Created: 2025/05/11 16:11:15 by skeita            #+#    #+#             */
+/*   Updated: 2025/05/11 16:11:16 by skeita           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t				i;
-	unsigned char		*dest_char;
-	const unsigned char	*src_char = (unsigned char *)src;
+	t_list	*current_ptr;
+	t_list	*next_ptr;
 
-	dest_char = (unsigned char *)dest;
-	if ((dest_char == NULL || src_char == NULL) && n == 0)
-		return (dest);
-	i = 0;
-	while (i < n)
+	if (lst == NULL || del == NULL)
+		return ;
+	current_ptr = *lst;
+	while (current_ptr != NULL)
 	{
-		dest_char[i] = src_char[i];
-		i++;
+		next_ptr = current_ptr->next;
+		ft_lstdelone(current_ptr, del);
+		current_ptr = next_ptr;
 	}
-	return (dest);
+	*lst = NULL;
 }

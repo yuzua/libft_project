@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skeita <skeita@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 16:11:50 by skeita            #+#    #+#             */
-/*   Updated: 2025/05/11 16:40:32 by skeita           ###   ########.fr       */
+/*   Created: 2025/05/11 16:11:11 by skeita            #+#    #+#             */
+/*   Updated: 2025/05/11 17:00:25 by skeita           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t				i;
-	unsigned char		*dest_char;
-	const unsigned char	*src_char = (unsigned char *)src;
-
-	dest_char = (unsigned char *)dest;
-	if ((dest_char == NULL || src_char == NULL) && n == 0)
-		return (dest);
-	i = 0;
-	while (i < n)
-	{
-		dest_char[i] = src_char[i];
-		i++;
-	}
-	return (dest);
+	if (lst == NULL || new == NULL)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

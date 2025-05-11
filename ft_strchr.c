@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skeita <skeita@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/11 16:12:13 by skeita            #+#    #+#             */
+/*   Updated: 2025/05/11 16:40:56 by skeita           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -5,8 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	int			i;
 	const char	c_char = (char)c;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{

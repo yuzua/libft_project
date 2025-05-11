@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skeita <skeita@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 16:11:50 by skeita            #+#    #+#             */
-/*   Updated: 2025/05/11 16:40:32 by skeita           ###   ########.fr       */
+/*   Created: 2025/05/11 16:11:42 by skeita            #+#    #+#             */
+/*   Updated: 2025/05/11 16:11:42 by skeita           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	size_t				i;
-	unsigned char		*dest_char;
-	const unsigned char	*src_char = (unsigned char *)src;
+	size_t	lst_node_count;
+	t_list	*next_ptr;
 
-	dest_char = (unsigned char *)dest;
-	if ((dest_char == NULL || src_char == NULL) && n == 0)
-		return (dest);
-	i = 0;
-	while (i < n)
+	lst_node_count = 0;
+	if (lst == NULL)
+		return ((int)lst_node_count);
+	next_ptr = lst;
+	while (next_ptr != NULL)
 	{
-		dest_char[i] = src_char[i];
-		i++;
+		lst_node_count++;
+		next_ptr = next_ptr->next;
 	}
-	return (dest);
+	return ((int)lst_node_count);
 }
