@@ -1,3 +1,5 @@
+#include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;
@@ -8,7 +10,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (s_char[i] == c_char)
-			return ((void)s_char + i);
+			return ((void *)s_char + i);
 		i++;
 	}
 	return (NULL);

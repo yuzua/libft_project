@@ -1,4 +1,4 @@
-#include <stdbool.h>
+#include "libft.h"
 
 static void	copy_forward(
 	unsigned char *dest, const unsigned char *src, size_t n

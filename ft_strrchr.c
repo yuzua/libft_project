@@ -1,6 +1,8 @@
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int		s_len;
+	int					s_len;
 	const unsigned char	c_char = (unsigned char)c;
 
 	if (s == NULL)

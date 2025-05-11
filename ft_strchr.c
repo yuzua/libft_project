@@ -1,6 +1,8 @@
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int			i;
 	const char	c_char = (char)c;
 
 	if (s == NULL)

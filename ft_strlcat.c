@@ -1,3 +1,5 @@
+#include "libft.h"
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 {
 	size_t	src_len;
@@ -17,5 +19,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 		i++;
 	}
 	dst[inputed_dst_len + i] = '\0';
-	return (inputed_dst_len + s_len);
+	return (inputed_dst_len + src_len);
 }
